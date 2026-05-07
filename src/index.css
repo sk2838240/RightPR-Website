@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Dark Foundations ── */
+  --color-royal-black: #111111;
+  --color-espresso: #2C1A12;
+  --color-espresso-light: #3D2A1E;
+  --color-espresso-muted: #4A3528;
+
+  /* ── Primary Accent: Imperial Gold ── */
+  --color-gold: #C9A227;
+  --color-gold-light: #E0C45A;
+  --color-gold-dark: #9A7A1C;
+
+  /* ── Typography ── */
+  --color-cream: #F8F4EE;
+  --color-cream-muted: #EFE6DA;
+
+  /* ── Section Accent Colors ── */
+  --color-velvet: #5B0B12;
+  --color-velvet-light: #7D1A22;
+  --color-emerald: #0F6B55;
+  --color-emerald-light: #14896C;
+  --color-sapphire: #156E8A;
+  --color-sapphire-light: #1A8BAD;
+  --color-amethyst: #6C4A7A;
+  --color-amethyst-light: #87609A;
+  --color-burnished: #D96A1B;
+  --color-burnished-light: #EF8A3A;
+
+  /* ── Fonts ── */
+  --font-cinzel: "Cinzel", serif;
+  --font-lora: "Lora", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-lora);
+  background-color: var(--color-royal-black);
+  color: var(--color-cream);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(201, 162, 39, 0.3);
+  color: var(--color-cream);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-royal-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C9A227, #E0C45A, #C9A227);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(201, 162, 39, 0.12);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(201, 162, 39, 0.3);
+}
+
+.gold-input {
+  border-bottom: 2px solid rgba(201, 162, 39, 0.2);
+}
+.gold-input:focus {
+  border-bottom-color: rgba(201, 162, 39, 0.6);
+}
